@@ -1,0 +1,33 @@
+
+[
+    {
+        "thumbName": "border_small_1",
+        "bigName": "border_big_169_1",
+        "isPro": false
+    },
+    {
+        "thumbName": "border_small_2",
+        "bigName": "border_big_169_2",
+        "isPro": true
+    },
+    {
+        "thumbName": "border_small_3",
+        "bigName": "border_big_169_3",
+        "isPro": true
+    },
+    {
+        "thumbName": "border_small_4",
+        "bigName": "border_big_169_4",
+        "isPro": true
+    },
+    {
+        "thumbName": "border_small_5",
+        "bigName": "border_big_169_5",
+        "isPro": true
+    },
+    {
+        "thumbName": "border_small_6",
+        "bigName": "border_big_169_6",
+        "isPro": true
+    }
+]

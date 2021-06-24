@@ -1,0 +1,150 @@
+
+[
+    {
+        "thumbName": "#FFFFFF",
+        "bigName": "#FFFFFF",
+        "isPro": false
+    },
+    {
+        "thumbName": "#000000",
+        "bigName": "#000000",
+        "isPro": false
+    },
+    {
+        "thumbName": "#FFF0EF",
+        "bigName": "#FFF0EF",
+        "isPro": true
+    },
+    {
+        "thumbName": "#FFEF8E",
+        "bigName": "#FFEF8E",
+        "isPro": true
+    },
+    {
+        "thumbName": "#FFD474",
+        "bigName": "#FFD474",
+        "isPro": true
+    },
+    {
+        "thumbName": "#CEE86F",
+        "bigName": "#CEE86F",
+        "isPro": true
+    },
+    {
+        "thumbName": "#99D74E",
+        "bigName": "#99D74E",
+        "isPro": true
+    },
+    {
+        "thumbName": "#4F79E2",
+        "bigName": "#4F79E2",
+        "isPro": true
+    },
+    {
+        "thumbName": "#73DBD4",
+        "bigName": "#73DBD4",
+        "isPro": true
+    },
+    {
+        "thumbName": "#80BFFF",
+        "bigName": "#80BFFF",
+        "isPro": true
+    },
+    {
+        "thumbName": "#B98ADE",
+        "bigName": "#B98ADE",
+        "isPro": true
+    },
+    {
+        "thumbName": "#C168C7",
+        "bigName": "#C168C7",
+        "isPro": true
+    },
+    {
+        "thumbName": "#FFC7CE",
+        "bigName": "#FFC7CE",
+        "isPro": true
+    },
+    {
+        "thumbName": "#FF827D",
+        "bigName": "#FF827D",
+        "isPro": true
+    },
+    {
+        "thumbName": "#FF4644",
+        "bigName": "#FF4644",
+        "isPro": true
+    },
+    {
+        "thumbName": "background_small_1",
+        "bigName": "background_big_1",
+        "isPro": true
+    },
+    {
+        "thumbName": "background_small_2",
+        "bigName": "background_big_2",
+        "isPro": true
+    },
+    {
+        "thumbName": "background_small_3",
+        "bigName": "background_big_3",
+        "isPro": true
+    },
+    {
+        "thumbName": "background_small_4",
+        "bigName": "background_big_4",
+        "isPro": true
+    },
+    {
+        "thumbName": "background_small_5",
+        "bigName": "background_big_5",
+        "isPro": true
+    },
+    {
+        "thumbName": "background_small_6",
+        "bigName": "background_big_6",
+        "isPro": true
+    },
+    {
+        "thumbName": "background_small_7",
+        "bigName": "background_big_7",
+        "isPro": true
+    },
+    {
+        "thumbName": "background_small_8",
+        "bigName": "background_big_8",
+        "isPro": true
+    },
+    {
+        "thumbName": "background_small_9",
+        "bigName": "background_big_9",
+        "isPro": true
+    },
+    {
+        "thumbName": "background_small_10",
+        "bigName": "background_big_10",
+        "isPro": true
+    },
+    {
+        "thumbName": "background_small_11",
+        "bigName": "background_big_11",
+        "isPro": true
+    },
+    {
+        "thumbName": "background_small_12",
+        "bigName": "background_big_12",
+        "isPro": true
+    },
+    {
+        "thumbName": "background_small_13",
+        "bigName": "background_big_13",
+        "isPro": true
+    },
+    {
+        "thumbName": "background_small_14",
+        "bigName": "background_big_14",
+        "isPro": true
+    }
+    
+]
+

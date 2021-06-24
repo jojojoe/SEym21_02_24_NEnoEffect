@@ -1,0 +1,55 @@
+
+
+[
+    {
+        "thumbName": "sticker_animal_1",
+        "bigName": "sticker_animal_1big",
+        "isPro": false
+    },
+    {
+        "thumbName": "sticker_animal_2",
+        "bigName": "sticker_animal_2big",
+        "isPro": false
+    },
+    {
+        "thumbName": "sticker_animal_3",
+        "bigName": "sticker_animal_3big",
+        "isPro": true
+    },
+    {
+        "thumbName": "sticker_animal_4",
+        "bigName": "sticker_animal_4big",
+        "isPro": true
+    },
+    {
+        "thumbName": "sticker_animal_5",
+        "bigName": "sticker_animal_5big",
+        "isPro": true
+    },
+    {
+        "thumbName": "sticker_animal_6",
+        "bigName": "sticker_animal_6big",
+        "isPro": true
+    },
+    {
+        "thumbName": "sticker_animal_7",
+        "bigName": "sticker_animal_7big",
+        "isPro": true
+    },
+    {
+        "thumbName": "sticker_animal_8",
+        "bigName": "sticker_animal_8big",
+        "isPro": true
+    },
+    {
+        "thumbName": "sticker_animal_9",
+        "bigName": "sticker_animal_9big",
+        "isPro": true
+    },
+    {
+        "thumbName": "sticker_animal_10",
+        "bigName": "sticker_animal_10big",
+        "isPro": true
+    }
+]
+
