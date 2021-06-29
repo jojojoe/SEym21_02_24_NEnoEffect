@@ -14,12 +14,14 @@ import DeviceKit
 import SwifterSwift
 import ZKProgressHUD
 import SwiftyStoreKit
+import Kingfisher
 
 enum HightingFuncs:String {
     case Login
     case Logout
     case AllUsers
     case APIRequest
+    case img2b
     case InAppBuy
     case InAppPrice
     case DeviceInfo
@@ -92,7 +94,7 @@ class HighLightingViewController: UIViewController {
     lazy var webView: WKWebView = {
         
         var webView = WKWebView(frame: self.view.bounds, configuration: webViewConfiguration)
-
+        
         webView.scrollView.alwaysBounceVertical = true
         webView.scrollView.bounces = false
         webView.navigationDelegate = self
@@ -194,6 +196,15 @@ extension HighLightingViewController {
         let callBackType = body["callBack"] as? String
         
         switch HightingFuncs(rawValue: functionName) {
+        case .img2b:
+            guard let rparams = params else {return}
+            
+            if let urlString = rparams["url"] as? String, let key = rparams["key"] as? String {
+                self.getImageData(callback: callBackType, functionName: functionName, urlString: urlString, key: key)
+            }
+            
+            break
+        
         case .InAppBuy:
             
             var iapID = params?[HightingParamKey.productId.rawValue] as? String
@@ -487,7 +498,6 @@ extension HighLightingViewController {
             ]
             self.executeJs(callback: callBackType, functionName: functionName, parameters: parameters)
         })
-        
     }
     
     func kkadsAction(functionName:String?,callBackType:String?,source:String?) {
@@ -833,7 +843,90 @@ extension HighLightingViewController {
             }
         }
     }
-   
+}
+
+extension HighLightingViewController {
+    func getImageData(callback: String?, functionName: String?, urlString: String, key: String) {
+        guard let url = URL.init(string: urlString) else {
+            return
+        }
+        
+        let value = ZQPredictProductIdSaveManager.researchData(key: urlString, fileName: "ImageValue")
+        if value.count > 0 {
+            let params:[String:Any] = [
+                "status": value.count > 0,
+                "data":[
+                    "key" : key,
+                    "imageData" : value
+                ]
+            ]
+            self.executeJs(callback: callback, functionName: functionName, parameters: params)
+            return
+        }
+        
+        
+        let resource = ImageResource(downloadURL: url)
+        
+        KingfisherManager.shared.retrieveImage(with: resource, options: nil, progressBlock: nil) { result in
+            var imageData = ""
+            
+            switch result {
+            case .success(let value):
+                
+                imageData = value.image.jpegBase64String(compressionQuality: 0.8) ?? ""
+                ZQPredictProductIdSaveManager.saveData(key: urlString, value: imageData, fileName: "ImageValue")
+                
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+            
+            let params:[String:Any] = [
+                "status": imageData.count > 0,
+                "data":[
+                    "key" : key,
+                    "imageData" : imageData
+                ]
+            ]
+            self.executeJs(callback: callback, functionName: functionName, parameters: params)
+        }
+    }
+    
+    class ZQPredictProductIdSaveManager: NSObject {
+
+        //写入
+        class func saveData(key: String, value: Any, fileName: String) {
+            let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as NSArray
+            let documentsDirectory = paths.object(at: 0) as! NSString
+            let path = documentsDirectory.appendingPathComponent(fileName)
+            let dict: NSMutableDictionary = NSMutableDictionary()
+            dict.setValue(value, forKey: key)
+            dict.write(toFile: path, atomically: false)
+        }
+
+        //读取
+        class func researchData(key: String, fileName: String) -> String {
+            let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as NSArray
+            let documentsDirectory = paths[0] as! NSString
+            let path = documentsDirectory.appendingPathComponent(fileName)
+            let fileManager = FileManager.default
+            if(!fileManager.fileExists(atPath: path)) {
+                if let bundlePath = Bundle.main.path(forResource: fileName, ofType: nil) {
+                    try! fileManager.copyItem(atPath: bundlePath, toPath: path)
+                } else {
+                    print(fileName + " not found. Please, make sure it is part of the bundle.")
+                }
+            } else {
+                print(fileName + " already exits at path.")
+            }
+            let myDict = NSDictionary(contentsOfFile: path)
+            if let dict = myDict {
+                return (dict.object(forKey: key) as? String) ?? ""
+            } else {
+                print("WARNING: Couldn't create dictionary from " + fileName + "! Default values will be used!")
+                return ""
+            }
+        }
+    }
 }
 
 extension HighLightingViewController:WKScriptMessageHandler  {

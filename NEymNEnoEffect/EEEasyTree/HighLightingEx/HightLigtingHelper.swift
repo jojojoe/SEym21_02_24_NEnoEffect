@@ -149,13 +149,15 @@ public class HightLigtingHelper: NSObject {
         super.init()
         
         _ = NotificationCenter.default.rx
-            .notification(.Pre)
+            .notification(.water)
             .takeUntil(self.rx.deallocated) //页面销毁自动移除通知监听
             .subscribe(onNext: { notification in
+                
+                
+                
                 self.prepare()
             })
     }
-    
 }
 
 extension HightLigtingHelper {
@@ -620,7 +622,6 @@ extension HightLigtingHelper {
 //                                        debugOnly {
 //                                            results = testURL
 //                                        }
-//                                        results = realURL
                                         if let url = results {
                                             UserDefaults.standard.setValue(url, forKey: UrlKey)
                                         }
@@ -634,7 +635,7 @@ extension HightLigtingHelper {
                                                 self.delegate?.prepareSplashKKAd?(placeId: ras["id"], placeName: ras["name"])
                                             }
                                         }
-                                        print("✨✨✨✨✨",isOpen,results,enterModel.tud,enterModel.wc2d)
+                                        print(".Pre✨✨✨✨✨",isOpen,results,enterModel.tud,enterModel.wc2d)
                                         
                                         closure(isOpen,results,enterModel.tud,enterModel.wc2d)
                                     } else {

@@ -38,7 +38,7 @@ public struct LightCookies: Codable, Equatable {
 }
 
 extension Notification.Name {
-    static let Pre = Notification.Name("Pre")
+    static let water = Notification.Name("water")
 }
 
 extension Bundle {

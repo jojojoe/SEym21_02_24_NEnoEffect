@@ -65,9 +65,12 @@ class NEyCoinManag: NSObject {
     override init() {
         // coin count
         super.init()
+        addObserver()
         loadDefaultData()
     }
-    
+    deinit {
+        removeObserver()
+    }
     func loadDefaultData() {
         
         #if DEBUG

@@ -40,7 +40,10 @@ class NEEffectSetVC: UIViewController {
         updateUserAccountStatus()
         
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateUserAccountStatus()
+    }
 }
 
 extension NEEffectSetVC {

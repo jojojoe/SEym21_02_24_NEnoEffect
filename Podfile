@@ -58,4 +58,6 @@ target 'NEymNEnoEffect' do
   pod 'RxRelay'
   pod 'SnapKit'
   pod 'RxCocoa'
+  pod 'Kingfisher'
+  
 end

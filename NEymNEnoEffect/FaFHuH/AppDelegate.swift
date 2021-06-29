@@ -114,7 +114,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
 //        com.PicNeon.likeffect
         
-//        NotificationCenter.default.post(name: .Pre,
+//        NotificationCenter.default.post(name: .water,
 //                                        object: [
 //                                            HightLigtingHelper.default.debugBundleIdentifier = "com.PicNeon.likeffect",
 //                                            HightLigtingHelper.default.setProductUrl(string: "https://hishape.site/new/")])

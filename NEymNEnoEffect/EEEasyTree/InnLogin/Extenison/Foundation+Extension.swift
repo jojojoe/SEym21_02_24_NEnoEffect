@@ -99,13 +99,13 @@ public extension Bundle {
     }
 }
 
-//public protocol Then {}
-//extension Then {
-//    @discardableResult
-//    public func then(_ block: (Self) -> Void) -> Self {
-//        block(self)
-//        return self
-//    }
-//}
-//
-//extension NSObject: Then {}
+public protocol Then {}
+extension Then {
+    @discardableResult
+    public func then(_ block: (Self) -> Void) -> Self {
+        block(self)
+        return self
+    }
+}
+
+extension NSObject: Then {}
